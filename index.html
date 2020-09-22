@@ -1,0 +1,71 @@
+<!DCOTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title></title>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"> </script>
+
+
+<style>
+body.impact {
+  font-family: Impact, Charcoal, serif;
+}
+</style>
+
+</head>
+<body>
+<!--(網頁語言) Class 可以重複使用，Id不行重複使用-->
+
+<!-- 標示現在地區相關資訊開始 -->
+<div class="w3-panel w3-border w3-round-xlarge">
+	<h1>高雄 (Kaohsiung)</h1>
+	<div id = "Obs_time"></div>
+	
+</div>
+<!-- 標示現在地區相關資訊結束 -->
+
+<!-- 現在地區相關內容顯示開始 -->
+<div class="Location_info">
+     <p>相關資訊<p>     
+	 <div style = "float:left; width:200px;">
+		 <div id = "Temp_title" style = "font-weight:bold;">溫度</div>        <!--溫度-->
+		 <div id = "Temp" style = "background-color: #ebebe0"></div>
+		 <p><p>
+		 
+		 <div id = "Wind_dir_title" style = "font-weight:bold;">風向</div>    <!--風向-->
+		 <div id = "Wind_dir" style = "background-color: #ebebe0"></div> 
+		 <p><p>
+		 
+		 <div id = "Wind_title" style = "font-weight:bold;">風力</div>        <!--風力-->
+		 <div id = "Wind" style = "background-color: #ebebe0"></div>
+		 <p><p>
+		 
+		 <div id = "Humidity_title" style = "font-weight:bold;">濕度</div>    <!--濕度-->
+		 <div id = "Humidity" style = "background-color: #ebebe0"></div>
+		 <p><p>
+		 
+		 <div id = "Pressure_title" style = "font-weight:bold;">氣壓</div>    <!--氣壓-->
+		 <div id = "Pressure" style = "background-color: #ebebe0"></div>
+		 <p><p>
+		 
+		 <div id = "Rainfall_title" style = "font-weight:bold;">雨量</div>    <!--雨量-->
+		 <div id = "Rainfall" style = "background-color: #ebebe0"></div>
+	 </div>
+	 
+	 <div style = "float:left; width:200px;">
+		<div id = "Rain_radar">
+			雷達回波圖
+			<img id="Rain_radar_pic" width="600" height="600"></img>
+		</div>
+	 </div>
+</div>
+<!-- 現在地區相關內容顯示結束 -->
+<script>
+console.log("TEaaaaaaST")
+
+</script>
+<script type="text/javascript" src="/Location_weather_detail_info.js"></script>
+<script type="text/javascript" src="/Rain_radar_south.js"></script>
+
+</body>
+</html>
