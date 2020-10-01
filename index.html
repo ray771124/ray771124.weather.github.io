@@ -10,11 +10,26 @@
 body.impact {
   font-family: Impact, Charcoal, serif;
 }
+
+.Grid_container{
+  display: grid;
+  grid-template-areas:
+
+
+} 
 </style>
 
 </head>
 <body>
-<!--(網頁語言) Class 可以重複使用，Id不行重複使用-->
+<!--(網頁語言)-->
+
+<!-- 
+(1) Class 可以重複使用，Id不行重複使用
+(2) [display:inline-block]
+以inline的方式呈現，但同時擁有block的屬性
+．可設定元素的寬高/margin/padding
+．可水平排列
+-->
 
 <!-- 標示現在地區相關資訊開始 -->
 <div class="w3-panel w3-border w3-round-xlarge">
@@ -23,14 +38,35 @@ body.impact {
 	
 </div>
 <!-- 標示現在地區相關資訊結束 -->
-
 <!-- 現在地區相關內容顯示開始 -->
-<div class="Location_info">
-     <p>相關資訊<p>     
-	 <div style = "float:left; width:200px;">
-		 <div id = "Temp_title" style = "font-weight:bold;">溫度</div>        <!--溫度-->
-		 <div id = "Temp" style = "background-color: #ebebe0"></div>
-		 <p><p>
+<div class="Grid_container">    
+	 <div id = "Location_info">
+	     <p>地區相關資訊</p> 
+		 
+		 <!--溫度-->
+		 <div id = "Temp_title" style ="display:inline-block;">               
+			 	<div id = "Temp_Now" style = "display:inline-block; padding-right:30px; border-right-style:dashed; border-right-width:1px;">
+				<span id = "Temp_now_value" style = "font-size:66px; font-family:微軟正黑體 Light;"></span>
+				<span id = "Temp_unit" style = "font-size:22px; font-family:微軟正黑體 Light;">°C</span>
+			 </div>
+		 
+		 	 <div id = "Temp_H_today" style = "display:inline-block; padding-left:30px; padding-right:2em;"> 
+				<br>今日最高</br>
+				<span id = "Temp_H_today_value" style = "font-size:20px; font-family:微軟正黑體 Light; color:red;"></span>
+			 </div>
+			 
+			 <div id = "Temp_L_today" style = "display:inline-block;">
+				<br>今日最低</br>
+				<span id = "Temp_L_today_value" style = "font-size:20px; font-family:微軟正黑體 Light; color:blue;"></span>
+			 </div>
+		 </div>
+		 
+		 <!--紫外線-->
+		 <div id = "UVI_title" style = "padding-top:20px;">    
+			<span id = "UVI_Now" style = "font-size:20px; font-family:微軟正黑體 Light;">紫外線指數</span>
+			<span id = "UVI_now_value" style = "padding-left:30px; font-size:20px; font-family:微軟正黑體 Light;"></span>
+			<span id = "UVI_dividing_degree" style = "padding-left:30px; font-size:20px; font-family:微軟正黑體 Light;"></span>
+		 </div>
 		 
 		 <div id = "Wind_dir_title" style = "font-weight:bold;">風向</div>    <!--風向-->
 		 <div id = "Wind_dir" style = "background-color: #ebebe0"></div> 
@@ -52,6 +88,49 @@ body.impact {
 		 <div id = "Rainfall" style = "background-color: #ebebe0"></div>
 	 </div>
 	 
+
+	<div id = "Rain_radar">
+		<p>雷達回波圖</p>
+		<img id="Rain_radar_pic" width="600" height="600"></img>
+	</div>
+
+</div>
+<!-- 現在地區相關內容顯示結束 V2 -->
+
+
+<!-- 現在地區相關內容顯示開始 V1 
+<div class="Grid_container">
+     <p>相關資訊<p>     
+	 <div style = "float:left; width:200px;">
+		 <div id = "Temp_title" style = "font-weight:bold; font-size:20px;">溫度</div>       
+		 
+		 <div id = "Temp" style = "float:left; background-color:#ebebe0; font-size:56px; font-family:Microsoft JhengHei"></div>
+		 <div id = "Temp_H_today" style = "background-color: #ebebe0"> 最高</div>
+		 <p id = "Temp_H_today_value"><p>
+		 <div id = "Temp_L_today" style = "background-color: #ebebe0">最低</div>
+		  <p id = "Temp_L_today_value"><p>
+		 <p><p>
+		 
+		 <div id = "Wind_dir_title" style = "font-weight:bold;">風向</div>   
+		 <div id = "Wind_dir" style = "background-color: #ebebe0"></div> 
+		 <p><p>
+		 
+		 <div id = "Wind_title" style = "font-weight:bold;">風力</div>      
+		 <div id = "Wind" style = "background-color: #ebebe0"></div>
+		 <p><p>
+		 
+		 <div id = "Humidity_title" style = "font-weight:bold;">濕度</div>    
+		 <div id = "Humidity" style = "background-color: #ebebe0"></div>
+		 <p><p>
+		 
+		 <div id = "Pressure_title" style = "font-weight:bold;">氣壓</div>    
+		 <div id = "Pressure" style = "background-color: #ebebe0"></div>
+		 <p><p>
+		 
+		 <div id = "Rainfall_title" style = "font-weight:bold;">雨量</div>   
+		 <div id = "Rainfall" style = "background-color: #ebebe0"></div>
+	 </div>
+	 
 	 <div style = "float:left; width:200px;">
 		<div id = "Rain_radar">
 			雷達回波圖
@@ -59,24 +138,26 @@ body.impact {
 		</div>
 	 </div>
 </div>
-
+現在地區相關內容顯示結束 V1-->
 
 <div class="Version_info" style = "clear:both;">
 <p>網頁更新紀錄<p>
-2020.09.23  網頁初版 (簡易版 - 簡易資料 : 溫度/風向/風力/濕度/氣壓/雨量/雷達回波圖) 
+<p>2020.09.23  網頁初版 (簡易版 - 簡易資料 : 溫度/風向/風力/濕度/氣壓/雨量/雷達回波圖)</p>
+<p>2020.09.30  新增溫度 - 今日高溫 / 今日低溫 (版面調整)</p>
+<p>2020.09.30  新增紫外線</p>
 </div>
-<!-- 現在地區相關內容顯示結束 -->
+
 <script>
 console.log("TEaaaaaaST")
 
 </script>
-<!-- Localhost 網址連結
-<script type="text/javascript" src="/Location_weather_detail_info.js"></script>
+<!-- Localhost 網址連結 
+<script type="text/javascript" src="/Location_weather_detail_info.js?random=${Math.random()}"></script>
 <script type="text/javascript" src="/Rain_radar_south.js"></script>
---->
+-->
 
-<!-- Github 網址連結-->
-<script type="text/javascript" src="/weather/Location_weather_detail_info.js"></script>
+<!-- Github 網址連結 >
+<script type="text/javascript" src="/weather/Location_weather_detail_info.js?random=${Math.random()}"></script>
 <script type="text/javascript" src="/weather/Rain_radar_south.js"></script>
 <!---->
 </body>
