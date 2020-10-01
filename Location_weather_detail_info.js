@@ -64,25 +64,25 @@ function UVI_dividing_degree_color_mark()
 		document.getElementById("UVI_dividing_degree").style.color = "Green";
 		console.log("低量級")
 	} 
-	else if (UVI_now_value_temp >=3 && UVI_now_value_temp <=5) 
+	else if (UVI_now_value_temp > 2 && UVI_now_value_temp <=5) 
 	{
 		document.getElementById("UVI_dividing_degree").innerHTML = '中量級';
 		document.getElementById("UVI_dividing_degree").style.color = "Yellow";
 		console.log("中量級")
 	} 
-	else if (UVI_now_value_temp >=6 && UVI_now_value_temp <=7) 
+	else if (UVI_now_value_temp > 5 && UVI_now_value_temp <=7) 
 	{
 		document.getElementById("UVI_dividing_degree").innerHTML = '高量級';
 		document.getElementById("UVI_dividing_degree").style.color = "Orange";
 		console.log("高量級")
 	} 
-	else if (UVI_now_value_temp >=8 && UVI_now_value_temp <=10) 
+	else if (UVI_now_value_temp > 7 && UVI_now_value_temp <=10) 
 	{
 		document.getElementById("UVI_dividing_degree").innerHTML = '過量級';
 		document.getElementById("UVI_dividing_degree").style.color = "Red";
 		console.log("過量級")
 	} 
-	else if (UVI_now_value_temp >=11) 
+	else if (UVI_now_value_temp > 10) 
 	{
 		document.getElementById("UVI_dividing_degree").innerHTML = '危險級';
 		document.getElementById("UVI_dividing_degree").style.color = "Violet";
