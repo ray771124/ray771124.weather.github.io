@@ -154,16 +154,20 @@ li a:hover
  
         function srvTime() {
             var xmlHttp;
-            if (window.XMLHttpRequest) {
+            if (window.XMLHttpRequest) 
+			{
                 //FF, Opera, Safari, Chrome
                 xmlHttp = new XMLHttpRequest();
+				console.log("FF, Opera, Safari, Chrome");
             } else if (window.ActiveXObject) {
                 //Old IE Browsers.
                 xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+				console.log("IE");
             }
             xmlHttp.open('HEAD', window.location.href, false);
             xmlHttp.setRequestHeader("Content-Type", "text/html");
             xmlHttp.send('');
+			console.log("Get time");
             return xmlHttp.getResponseHeader("Date");
         }
     </script>
