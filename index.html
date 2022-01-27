@@ -82,29 +82,29 @@ li a:hover
         document.getElementById('test').innerHTML = date;
 	
 	display_c();
- 
+        function srvTime() 
+	{
+		    var xmlHttp;
+		    if (window.XMLHttpRequest) 
+		    {
+			//FF, Opera, Safari, Chrome
+			xmlHttp = new XMLHttpRequest();
+
+		    } 
+			else if (window.ActiveXObject) 
+		    {
+			//Old IE Browsers.
+			xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+		    }
+		    xmlHttp.open('HEAD', window.location.href, false);
+		    xmlHttp.setRequestHeader("Content-Type", "text/html");
+		    xmlHttp.send('');
+		    return xmlHttp.getResponseHeader("Date");
+
+	 }	
      
 }
- function srvTime() 
-{
-            var xmlHttp;
-            if (window.XMLHttpRequest) 
-	    {
-                //FF, Opera, Safari, Chrome
-                xmlHttp = new XMLHttpRequest();
-				
-            } 
-		else if (window.ActiveXObject) 
-	    {
-                //Old IE Browsers.
-                xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
-            }
-            xmlHttp.open('HEAD', window.location.href, false);
-            xmlHttp.setRequestHeader("Content-Type", "text/html");
-            xmlHttp.send('');
-            return xmlHttp.getResponseHeader("Date");
-	
- }	
+
 
 function display_c()
 {
