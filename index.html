@@ -145,7 +145,28 @@ li a:hover
 		<p>雷達回波圖</p>
 		<img id="Rain_radar_pic" width="600" height="600"></img>
 	</div>
-
+ <script type="text/javascript">
+        var localTime = new Date();
+        document.write("Local machine time is: " + localTime + "<br>");
+        var st = srvTime();
+        var date = new Date(st);
+        document.write("Server time is: " + date);
+ 
+        function srvTime() {
+            var xmlHttp;
+            if (window.XMLHttpRequest) {
+                //FF, Opera, Safari, Chrome
+                xmlHttp = new XMLHttpRequest();
+            } else if (window.ActiveXObject) {
+                //Old IE Browsers.
+                xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            xmlHttp.open('HEAD', window.location.href, false);
+            xmlHttp.setRequestHeader("Content-Type", "text/html");
+            xmlHttp.send('');
+            return xmlHttp.getResponseHeader("Date");
+        }
+    </script>
 </div>
 <!-- 現在地區相關內容顯示結束 V2 -->
 
