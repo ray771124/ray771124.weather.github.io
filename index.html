@@ -72,7 +72,45 @@ li a:hover
     </ul> 
 <div class = "location_settings">地區設定：</div> 
 </head>
-<body>
+	
+<script type="text/javascript">
+
+ function now_time() 
+ {
+        var localTime = new Date();
+        document.write("Local machine time is: " + localTime + "<br>");
+        var st = srvTime();
+        var date = new Date(st);
+        document.write("Server time is: " + date);
+	
+	 var refresh=1000; // Refresh rate in milli seconds
+	mytime=setTimeout('now_time()',refresh)
+ 
+        function srvTime() {
+            var xmlHttp;
+            if (window.XMLHttpRequest) 
+			{
+                //FF, Opera, Safari, Chrome
+                xmlHttp = new XMLHttpRequest();
+				console.log("FF, Opera, Safari, Chrome");
+            } else if (window.ActiveXObject) {
+                //Old IE Browsers.
+                xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+				console.log("IE");
+            }
+            xmlHttp.open('HEAD', window.location.href, false);
+            xmlHttp.setRequestHeader("Content-Type", "text/html");
+            xmlHttp.send('');
+			console.log("Get time");
+            return xmlHttp.getResponseHeader("Date");
+        }
+	}
+		eturn xmlHttp.getResponseHeader("Date");
+        }
+</script>
+	
+	
+<body onload=now_time();>
 <!--(網頁語言)-->
 
 <!-- 
@@ -145,32 +183,7 @@ li a:hover
 		<p>雷達回波圖</p>
 		<img id="Rain_radar_pic" width="600" height="600"></img>
 	</div>
- <script type="text/javascript">
-        var localTime = new Date();
-        document.write("Local machine time is: " + localTime + "<br>");
-        var st = srvTime();
-        var date = new Date(st);
-        document.write("Server time is: " + date);
  
-        function srvTime() {
-            var xmlHttp;
-            if (window.XMLHttpRequest) 
-			{
-                //FF, Opera, Safari, Chrome
-                xmlHttp = new XMLHttpRequest();
-				console.log("FF, Opera, Safari, Chrome");
-            } else if (window.ActiveXObject) {
-                //Old IE Browsers.
-                xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
-				console.log("IE");
-            }
-            xmlHttp.open('HEAD', window.location.href, false);
-            xmlHttp.setRequestHeader("Content-Type", "text/html");
-            xmlHttp.send('');
-			console.log("Get time");
-            return xmlHttp.getResponseHeader("Date");
-        }
-    </script>
 </div>
 <!-- 現在地區相關內容顯示結束 V2 -->
 
