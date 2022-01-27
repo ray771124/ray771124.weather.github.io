@@ -77,11 +77,9 @@ li a:hover
 
  function now_time() 
  {
-        var localTime = new Date();
-        document.write("Local machine time is: " + localTime + "<br>");
         var st = srvTime();
         var date = new Date(st);
-        document.write("Server time is: " + date);
+        document.getElementById('test').innerHTML = date;
 	
 	 var refresh=1000; // Refresh rate in milli seconds
 	mytime=setTimeout('now_time()',refresh)
@@ -227,6 +225,7 @@ li a:hover
 			<img id="Rain_radar_pic" width="600" height="600"></img>
 		</div>
 	 </div>
+	 <div id = "test"></div>
 </div>
 現在地區相關內容顯示結束 V1-->
 
