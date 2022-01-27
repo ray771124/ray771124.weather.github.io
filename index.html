@@ -74,7 +74,11 @@ li a:hover
 
 	
 <script type="text/javascript">
-
+function display_c()
+{
+var refresh=1000; // Refresh rate in milli seconds
+mytime=setTimeout('now_time()',refresh)
+}
  function now_time() 
  {
         var st = srvTime();
@@ -106,11 +110,7 @@ li a:hover
 }
 
 
-function display_c()
-{
-var refresh=1000; // Refresh rate in milli seconds
-mytime=setTimeout('now_time()',refresh)
-}
+
 
 </script>
 </head>	
