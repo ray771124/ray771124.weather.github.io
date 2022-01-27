@@ -83,14 +83,17 @@ li a:hover
 	
 	display_c();
  
-        function srvTime() {
+        function srvTime() 
+	{
             var xmlHttp;
             if (window.XMLHttpRequest) 
-			{
+	    {
                 //FF, Opera, Safari, Chrome
                 xmlHttp = new XMLHttpRequest();
 				console.log("FF, Opera, Safari, Chrome");
-            } else if (window.ActiveXObject) {
+            } 
+		else if (window.ActiveXObject) 
+	    {
                 //Old IE Browsers.
                 xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
 				console.log("IE");
@@ -98,15 +101,13 @@ li a:hover
             xmlHttp.open('HEAD', window.location.href, false);
             xmlHttp.setRequestHeader("Content-Type", "text/html");
             xmlHttp.send('');
-			console.log("Get time");
             return xmlHttp.getResponseHeader("Date");
         }
 	}
-		eturn xmlHttp.getResponseHeader("Date");
 }
 
 function display_c()
-	{
+{
 var refresh=1000; // Refresh rate in milli seconds
 mytime=setTimeout('now_time()',refresh)
 }
