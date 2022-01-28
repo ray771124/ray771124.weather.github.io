@@ -81,8 +81,8 @@ mytime=setTimeout('now_time()',refresh)
 }
  function now_time() 
  {
-        var st = srvTime();
-        var date = new Date(st);
+        //var st = srvTime();
+        var date = new Date();
         document.getElementById('test').innerHTML = date;
 	
 	display_c();
